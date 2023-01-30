@@ -1,0 +1,90 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="CMA Tutorials">
+    <link rel="stylesheet" href="navbar-testing.css">
+    <head>
+        <title>ASG2 Interactive Dev</title>
+    </head>
+
+    <body>
+        <div class = "logo">        <img src = "logo1.png" alt = "Logo" class = "logo" width = 200px>
+        </div>
+
+        <div class="container">
+            <div class="open">
+            <span></span>
+            <span></span>
+            </div>
+            <div class="close">
+            <span></span>
+            <span></span>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="./login.html">Log in</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Sign up page</h1>
+            <div id="add-update-msg">
+                <div class="alert alert-success" role="alert">
+                    New account successfully created
+                </div>
+                <div class="form" id="add-user">
+                    <form id="sign-up-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="pass">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" class="form-control" required>
+                        </div>
+                        <div class="email">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" class="form-control" required>
+                        </div>
+                        <input type="submit" value="Continue" class="btn btn-primary" id="contact-submit">
+                    </form>
+                </div>
+            </div>
+        </div>  
+        <script src="navbar-testing.js"></script>
+    </body>
+</html>
+
+
+<div class="container">
+    <h1>Simple Contact Form System</h1>
+    <div id="add-update-msg">
+        <div class="alert alert-success" role="alert">
+            Contact record successfully added
+        </div>
+    </div>
+    <div class="form" id="add-contact">
+        <form id="add-contact-form">
+            <div class="form-group">
+                <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" class="form-control" required>
+        <small id="contact-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="contact-msg">Message</label>
+        <textarea id="contact-msg" class="form-control" required>
+        </textarea>
+      </div>
+
+      <input type="submit" value="Send" class="btn btn-primary" id="contact-submit">
+  </form>
+</div>
+</div>
