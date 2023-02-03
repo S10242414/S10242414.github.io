@@ -2,7 +2,7 @@
 
 > The Healthy Fast Food Project! 🌯🥗
 
-### This is Javier's and Keene Assignemnt Two for Interactive Development.
+### This is Javier's and Keene's Assignemnt Two for Interactive Development.
 
 #### We are creating a website of a fast food company with gamified features and it will be on a Fast Food company serving healthier food.
 
@@ -11,7 +11,10 @@
 - [x] Animation Page either using CSS or Lottie that redirects to Main Page
 - [ ] Second Page: Main Page
 - [ ] Third Page: Menu
-- [ ] Fourth Page: Available Locations
+- [ ] Fourth Page: Available Locations using API
+- [ ] Fifth Page: Log in Page using RestDB
+- [ ] Sixth Page: Sign up Page using RestDB
+- [ ] Seventh Page: Shopping Cart using RestDB
 - [x] Side Navigation Bars with different options
 
 ## Wireframe:
