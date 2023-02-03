@@ -2,11 +2,11 @@
 {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
 }
 body
 {
     background: #e2e2e2;
+    font-family: 400 'Raleway', sans-serif;
 }
 .container
 {
