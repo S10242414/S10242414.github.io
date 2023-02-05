@@ -132,6 +132,7 @@ ul li a
 .content p
 {
     margin: 40px 150px 40px 0px;
+    
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -157,3 +158,22 @@ ul li a
     padding: 5px;
   }
 
+  /* Add CSS styles for the shopping cart */
+table {
+    width: 250%;
+    margin: auto;
+  }
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+th {
+    text-align: left;
+  }
+button {
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
