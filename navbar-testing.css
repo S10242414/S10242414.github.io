@@ -160,21 +160,38 @@ ul li a
 
 
     /* Add CSS styles for the shopping cart */
-table {
-    width: 250%;
-    margin: auto;
-  }
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-  }
-th {
-    text-align: left;
-  }
-button {
-    background-color: green;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-  }
+    table {
+        border-collapse: collapse;
+        width: 250%;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+     
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
