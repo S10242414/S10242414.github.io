@@ -63,11 +63,6 @@ $(document).ready(function () {
     });//end click 
   
   
-    //[STEP] 6
-    //let's create a function to allow you to retrieve all the information in your contacts
-    //by default we only retrieve 10 results
-    function getContacts(limit = 10, all = true) {
-  
       //[STEP 7]: Create our AJAX settings
       let settings = {
         "async": true,
