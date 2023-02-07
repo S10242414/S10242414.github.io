@@ -197,6 +197,10 @@
           // Show a message to confirm the purchase
           alert("Thank you for your purchase!");
 
+          // Redirect to the invoice page
+
+          window.location.href = "successful-payment.html";
+
           // Store the total amount and items in local storage to access from the invoice page
           localStorage.setItem("total", total);
           localStorage.setItem("items", JSON.stringify(cart));
