@@ -9,7 +9,7 @@
 ## Design Process:
 
 - [x] Animation Page either using CSS or Lottie that redirects to Main Page
-- [ ] Second Page: Main Page
+- [x] Second Page: Main Page
 - [ ] Third Page: Menu
 - [ ] Fourth Page: Available Locations using API
 - [ ] Fifth Page: Log in Page using RestDB
