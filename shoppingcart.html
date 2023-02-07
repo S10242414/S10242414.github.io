@@ -3,90 +3,95 @@
 
 
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="CMA Tutorials">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&family=Raleway:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="navbar-testing.css">
-    <head>
-        <title>ASG2 Interactive Dev</title>
-        
-    </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="CMA Tutorials">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&family=Raleway:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="navbar-testing.css">
 
-    
-    <body>
-        <div class = "logo">        
-            <img src = "logo1.png" alt = "Logo" class = "logo" width = 200px>
-        </div>
+<head>
+  <title>ASG2 Interactive Dev</title>
 
-        <div class="container">
-            <div class="open">
-            <span></span>
-            <span></span>
-            </div>
-            <div class="close">
-            <span></span>
-            <span></span>
-            </div>
-            <div class="navbar">
-                <ul>
-                  <li><a href="about.html">Home</a></li>
-                    <li><a href="main.html">Menu</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="./loginsignup/login.html">Log in</a></li>
-                    <li><a href="shoppingcart.html">Cart</a></li>
-                    <li><a href ="#">Minigame</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="content">
-          <button style="margin-top: 20px;">
-            <a href="main.html" style="text-decoration: none; color: white;">Go to Menu</a>
-        </button>
-        
-            <h1>Product Catalog</h1>
-            <table>
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-              <!-- Add rows for each item in the catalog -->
-              <tr>
-                <td><img src = "salad.jpg" alt="salad" style="width:100px"; height="100px" ><br>Caesar Salad</td>
-                <td>$5</td>
-                <td><button onclick="addToCart('Caesar Salad', 5)">Add to Cart</button></td>
-              </tr>
-              <tr>
-                <td><img src = "bowl.jpg" alt="bowl" style="width:100px"; height="100px" ><br>Burrito Bowl</td>
-                <td>$6</td>
-                <td><button onclick="addToCart('Burrito Bowl', 6)">Add to Cart</button></td>
-              </tr><tr>
-                <td><img src = "wrap.jpg" alt="wrap" style="width:100px"; height="100px" ><br>Tuna Wrap</td>
-                <td>$4</td>
-                <td><button onclick="addToCart('Tuna Wrap', 4)">Add to Cart</button></td>
-              </tr>
-              </tr><tr>
-                <td><img src = "smoothies.jpg" alt="smoothies" style="width:100px"; height="100px" ><br>Smoothie</td>
-                
-                <td>$2</td>
-                <td><button onclick="addToCart('Smoothie', 2)">Add to Cart</button></td>
-              </tr>
-            </table>
-            <h1>Shopping Cart</h1>
-            <table id="cart">
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Action</th>
-              </tr>
-            </table>
-            <p id="total">Total: $0</p>
-            
-            <button id="checkoutBtn" onclick="checkout()" ; style="
+</head>
+
+
+<body>
+  <div class="logo">
+    <img src="logo1.png" alt="Logo" class="logo" width=200px>
+  </div>
+
+  <div class="container">
+    <div class="open">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="close">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="about.html">Home</a></li>
+        <li><a href="main.html">Menu</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="./loginsignup/login.html">Log in</a></li>
+        <li><a href="shoppingcart.html">Cart</a></li>
+        <li><a href="#">Minigame</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <button style="margin-top: 20px;">
+      <a href="main.html" style="text-decoration: none; color: white;">Go to Menu</a>
+    </button>
+
+    <h1>Product Catalog</h1>
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+      <!-- Add rows for each item in the catalog -->
+      <tr>
+        <td><img src="salad.jpg" alt="salad" style="width:100px" ; height="100px"><br>Caesar Salad</td>
+        <td>$5</td>
+        <td><button onclick="addToCart('Caesar Salad', 5)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td><img src="bowl.jpg" alt="bowl" style="width:100px" ; height="100px"><br>Burrito Bowl</td>
+        <td>$6</td>
+        <td><button onclick="addToCart('Burrito Bowl', 6)">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td><img src="wrap.jpg" alt="wrap" style="width:100px" ; height="100px"><br>Tuna Wrap</td>
+        <td>$4</td>
+        <td><button onclick="addToCart('Tuna Wrap', 4)">Add to Cart</button></td>
+      </tr>
+      </tr>
+      <tr>
+        <td><img src="smoothies.jpg" alt="smoothies" style="width:100px" ; height="100px"><br>Smoothie</td>
+
+        <td>$2</td>
+        <td><button onclick="addToCart('Smoothie', 2)">Add to Cart</button></td>
+      </tr>
+    </table>
+    <h1>Shopping Cart</h1>
+    <table id="cart">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </table>
+    <p id="total">Total: $0</p>
+
+    <button id="checkoutBtn" onclick="checkout()" ; style="
               background-color: #4CAF50;
               border: none;
               color: white;
@@ -100,51 +105,51 @@
               border-radius: 5px;
               transition: all 0.5s ease-in-out;
               ">Checkout</button>
-  
-              <style>
-              /* Add hover effect to the button */
-              button:hover {
-                  transform: scale(1.1);
-                  box-shadow: 2px 2px 10px #999;
-              }
-              </style>
 
-            <script>
-              // Initialize the cart
-              let cart = [];
-        
-              // Function to add an item to the cart
-              function addToCart(product, price) {
-                let item = { product, price, quantity: 1 };
-                let itemIndex = -1;
-                for (let i = 0; i < cart.length; i++) {
-                  if (cart[i].product === product) {
-                    itemIndex = i;
-                    break;
-                  }
-                }
-                if (itemIndex === -1) {
-                  cart.push(item);
-                } else {
-                  cart[itemIndex].quantity++;
-                }
-                updateCart();
-              }
-        
-              // Function to remove an item from the cart
-              function removeFromCart(index) {
-                cart.splice(index, 1);
-                updateCart();
-              }
-        
-              // Function to update the cart
-              function updateCart() {
-                let cartTable = document.getElementById("cart");
-                let cartBody = "";
-                let total = 0;
-                for (let i = 0; i < cart.length; i++) {
-                  let item = cart[i];
-                  cartBody += `
+    <style>
+      /* Add hover effect to the button */
+      button:hover {
+        transform: scale(1.1);
+        box-shadow: 2px 2px 10px #999;
+      }
+    </style>
+
+    <script>
+      // Initialize the cart
+      let cart = [];
+
+      // Function to add an item to the cart
+      function addToCart(product, price) {
+        let item = { product, price, quantity: 1 };
+        let itemIndex = -1;
+        for (let i = 0; i < cart.length; i++) {
+          if (cart[i].product === product) {
+            itemIndex = i;
+            break;
+          }
+        }
+        if (itemIndex === -1) {
+          cart.push(item);
+        } else {
+          cart[itemIndex].quantity++;
+        }
+        updateCart();
+      }
+
+      // Function to remove an item from the cart
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+      }
+
+      // Function to update the cart
+      function updateCart() {
+        let cartTable = document.getElementById("cart");
+        let cartBody = "";
+        let total = 0;
+        for (let i = 0; i < cart.length; i++) {
+          let item = cart[i];
+          cartBody += `
                     <tr>
                       <td>${item.product}</td>
                       <td>$${item.price}</td>
@@ -152,52 +157,52 @@
                       <td><button onclick="removeFromCart(${i})">Remove</button></td>
                     </tr>
                   `;
-                  total += item.price * item.quantity;
-                }
-                cartTable.innerHTML = cartBody;
-                document.getElementById("total").innerHTML = `Total: $${total}`;
-              }
-                    // Function to handle checkout
-                    
-              function checkout() {
-                if (cart.length === 0) {
-                  alert("Your cart is empty!");
-                  return;
-                }
+          total += item.price * item.quantity;
+        }
+        cartTable.innerHTML = cartBody;
+        document.getElementById("total").innerHTML = `Total: $${total}`;
+      }
+      // Function to handle checkout
 
-                let total = 0;
-                for (let i = 0; i < cart.length; i++) {
-                  total += cart[i].price * cart[i].quantity;
-                }
+      function checkout() {
+        if (cart.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
 
-                if (confirm(`Your total is $${total}. Do you want to proceed with the checkout?`)) {
-                  // Clear the cart and update the shopping cart table
-                  cart = [];
-                  let table = document.getElementById("cart");
-                  while (table.rows.length > 1) {
-                    table.deleteRow(-1);
-                  }
-                  document.getElementById("total").innerHTML = "Total: $0";
+        let total = 0;
+        for (let i = 0; i < cart.length; i++) {
+          total += cart[i].price * cart[i].quantity;
+        }
 
-                  // Show a message to confirm the purchase
-                  alert("Thank you for your purchase!");
-                  // Store the total amount and items in local storage to access from the invoice page
-                  localStorage.setItem("total", total);
-                  localStorage.setItem("items", JSON.stringify(cart));
+        if (confirm(`Your total is $${total}. Do you want to proceed with the checkout?`)) {
+          // Clear the cart and update the shopping cart table
+          cart = [];
+          let table = document.getElementById("cart");
+          while (table.rows.length > 1) {
+            table.deleteRow(-1);
+          }
+          document.getElementById("total").innerHTML = "Total: $0";
 
-              // Redirect to the invoice page
+          // Show a message to confirm the purchase
+          alert("Thank you for your purchase!");
+          // Store the total amount and items in local storage to access from the invoice page
+          localStorage.setItem("total", total);
+          localStorage.setItem("items", JSON.stringify(cart));
 
-                  window.location.href = "successful-payment.html";
-                  
-                }
-                
-              }
-              
+          // Redirect to the invoice page
 
-            </script>
-        </div>  
-        <script src="navbar-testing.js"></script>
-    
-    </body>
+          window.location.href = "successful-payment.html";
+
+        }
+
+      }
+
+
+    </script>
+  </div>
+  <script src="navbar-testing.js"></script>
+
+</body>
+
 </html>
-
