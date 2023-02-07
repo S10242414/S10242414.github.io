@@ -118,6 +118,13 @@
       // Initialize the cart
       let cart = [];
 
+      // Get the cart items from local storage and update the cart
+      let savedCart = localStorage.getItem("cart");
+      if (savedCart) {
+        cart = JSON.parse(savedCart);
+      }
+      updateCart();
+
       // Function to add an item to the cart
       function addToCart(product, price) {
         let item = { product, price, quantity: 1 };
@@ -134,12 +141,14 @@
           cart[itemIndex].quantity++;
         }
         updateCart();
+        localStorage.setItem("cart", JSON.stringify(cart));
       }
 
       // Function to remove an item from the cart
       function removeFromCart(index) {
         cart.splice(index, 1);
         updateCart();
+        localStorage.setItem("cart", JSON.stringify(cart));
       }
 
       // Function to update the cart
@@ -150,20 +159,20 @@
         for (let i = 0; i < cart.length; i++) {
           let item = cart[i];
           cartBody += `
-                    <tr>
-                      <td>${item.product}</td>
-                      <td>$${item.price}</td>
-                      <td>${item.quantity}</td>
-                      <td><button onclick="removeFromCart(${i})">Remove</button></td>
-                    </tr>
-                  `;
+                <tr>
+                  <td>${item.product}</td>
+                  <td>$${item.price}</td>
+                  <td>${item.quantity}</td>
+                  <td><button onclick="removeFromCart(${i})">Remove</button></td>
+                </tr>
+              `;
           total += item.price * item.quantity;
         }
         cartTable.innerHTML = cartBody;
         document.getElementById("total").innerHTML = `Total: $${total}`;
       }
-      // Function to handle checkout
 
+      // Function to handle checkout
       function checkout() {
         if (cart.length === 0) {
           alert("Your cart is empty!");
@@ -178,6 +187,7 @@
         if (confirm(`Your total is $${total}. Do you want to proceed with the checkout?`)) {
           // Clear the cart and update the shopping cart table
           cart = [];
+          localStorage.removeItem("cart");
           let table = document.getElementById("cart");
           while (table.rows.length > 1) {
             table.deleteRow(-1);
@@ -186,20 +196,28 @@
 
           // Show a message to confirm the purchase
           alert("Thank you for your purchase!");
+
           // Store the total amount and items in local storage to access from the invoice page
           localStorage.setItem("total", total);
           localStorage.setItem("items", JSON.stringify(cart));
 
-          // Redirect to the invoice page
+          // Get the cart items from local storage and update the cart
+          let savedCart = localStorage.getItem("cart");
+          if (savedCart) {
+            cart = JSON.parse(savedCart);
+          }
 
-          window.location.href = "successful-payment.html";
+          updateCart();
 
+          // Store the updated cart in local storage
+          window.addEventListener("beforeunload", function () {
+            localStorage.setItem("cart", JSON.stringify(cart));
+          });
         }
-
       }
-
-
     </script>
+
+
   </div>
   <script src="navbar-testing.js"></script>
 
