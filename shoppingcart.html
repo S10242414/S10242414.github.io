@@ -36,18 +36,18 @@
       <ul>
         <li><a href="about.html">Home</a></li>
         <li><a href="main.html">Menu</a></li>
-        <li><a href="#">Contact</a></li>
         <li><a href="./loginsignup/login.html">Log in</a></li>
         <li><a href="shoppingcart.html">Cart</a></li>
       </ul>
     </div>
   </div>
   <div class="content">
-    <button style="margin-top: 20px;">
+    <button
+      style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">
       <a href="main.html" style="text-decoration: none; color: white;">Go to Menu</a>
     </button>
 
-    <h1>Product Catalog</h1>
+    <h1 style='text-align: left;'>Product Catalog</h1>
     <table>
       <tr>
         <th>Product</th>
@@ -78,7 +78,7 @@
         <td><button onclick="addToCart('Smoothie', 2)">Add to Cart</button></td>
       </tr>
     </table>
-    <h1>Shopping Cart</h1>
+    <h1 style='text-align: left;'>Shopping Cart</h1>
     <table id="cart">
       <tr>
         <th>Product</th>
@@ -103,60 +103,118 @@
               border-radius: 5px;
               transition: all 0.5s ease-in-out;
               ">Checkout</button>
-
+    <br>
     <style>
       /* Add hover effect to the button */
       button:hover {
         transform: scale(1.1);
         box-shadow: 2px 2px 10px #999;
       }
+
+      #volumeSlider {
+        width: 265px;
+      }
     </style>
+    <div style="text-align: left;">
+      <audio id="music">
+        <source src="assets/audio.mp3" type="audio/mp3">
+      </audio>
+      <br>
+      <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br><br>
+      <button id="playButton"
+        style="background-color: #4c74af; border: none; color: white; padding: 15px 32px; text-decoration: none; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4c74af; transition: all 0.3s ease-in-out;">Play
+        Music</button> <br><br>
+      <button id="pauseButton"
+        style="background-color: #4c74af; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4c74af; transition: all 0.3s ease-in-out;">Pause
+        Music</button>
+
+    </div>
 
     <script>
-      // Initialize the cart
-      let cart = [];
+      var audio = document.getElementById("music");
+      var volumeSlider = document.getElementById("volumeSlider");
+      var playButton = document.getElementById("playButton");
+      var pauseButton = document.getElementById("pauseButton");
 
-      // Get the cart items from local storage and update the cart
-      let savedCart = localStorage.getItem("cart");
-      if (savedCart) {
-        cart = JSON.parse(savedCart);
+      // Check if there's a saved audio state in local storage
+      var savedCurrentTime = localStorage.getItem("currentTime");
+      var savedVolume = localStorage.getItem("volume");
+
+      // If there's a saved audio state, apply it to the audio element
+      if (savedCurrentTime) {
+        audio.currentTime = savedCurrentTime;
+      }
+      if (savedVolume) {
+        audio.volume = savedVolume;
+      }
+
+      playButton.addEventListener("click", function () {
+        audio.play();
+        localStorage.setItem("audioState", "playing");
+      });
+
+      pauseButton.addEventListener("click", function () {
+        audio.pause();
+        localStorage.setItem("audioState", "paused");
+        localStorage.setItem("currentTime", audio.currentTime);
+      });
+
+      volumeSlider.addEventListener("input", function () {
+        audio.volume = volumeSlider.value;
+        localStorage.setItem("volume", audio.volume);
+      });
+    </script>
+    <br>
+    <iframe src="contacts.html" style="width:250%; height: 300px; margin-top: 20px; background-color:#73AD6C"></iframe>
+
+  </div>
+
+
+  <script>
+    // Initialize the cart
+    let cart = [];
+
+    // Get the cart items from local storage and update the cart
+    let savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      cart = JSON.parse(savedCart);
+    }
+    updateCart();
+
+    // Function to add an item to the cart
+    function addToCart(product, price) {
+      let item = { product, price, quantity: 1 };
+      let itemIndex = -1;
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].product === product) {
+          itemIndex = i;
+          break;
+        }
+      }
+      if (itemIndex === -1) {
+        cart.push(item);
+      } else {
+        cart[itemIndex].quantity++;
       }
       updateCart();
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
 
-      // Function to add an item to the cart
-      function addToCart(product, price) {
-        let item = { product, price, quantity: 1 };
-        let itemIndex = -1;
-        for (let i = 0; i < cart.length; i++) {
-          if (cart[i].product === product) {
-            itemIndex = i;
-            break;
-          }
-        }
-        if (itemIndex === -1) {
-          cart.push(item);
-        } else {
-          cart[itemIndex].quantity++;
-        }
-        updateCart();
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
+    // Function to remove an item from the cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
 
-      // Function to remove an item from the cart
-      function removeFromCart(index) {
-        cart.splice(index, 1);
-        updateCart();
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-
-      // Function to update the cart
-      function updateCart() {
-        let cartTable = document.getElementById("cart");
-        let cartBody = "";
-        let total = 0;
-        for (let i = 0; i < cart.length; i++) {
-          let item = cart[i];
-          cartBody += `
+    // Function to update the cart
+    function updateCart() {
+      let cartTable = document.getElementById("cart");
+      let cartBody = "";
+      let total = 0;
+      for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        cartBody += `
                 <tr>
                   <td>${item.product}</td>
                   <td>$${item.price}</td>
@@ -164,116 +222,65 @@
                   <td><button onclick="removeFromCart(${i})">Remove</button></td>
                 </tr>
               `;
-          total += item.price * item.quantity;
-        }
-        cartTable.innerHTML = cartBody;
-        document.getElementById("total").innerHTML = `Total: $${total}`;
+        total += item.price * item.quantity;
+      }
+      cartTable.innerHTML = cartBody;
+      document.getElementById("total").innerHTML = `Total: $${total}`;
+    }
+
+    // Function to handle checkout
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
       }
 
-      // Function to handle checkout
-      function checkout() {
-        if (cart.length === 0) {
-          alert("Your cart is empty!");
-          return;
-        }
-
-        let total = 0;
-        for (let i = 0; i < cart.length; i++) {
-          total += cart[i].price * cart[i].quantity;
-        }
-
-        if (confirm(`Your total is $${total}. Do you want to proceed with the checkout?`)) {
-          // Clear the cart and update the shopping cart table
-          cart = [];
-          localStorage.removeItem("cart");
-          let table = document.getElementById("cart");
-          while (table.rows.length > 1) {
-            table.deleteRow(-1);
-          }
-          document.getElementById("total").innerHTML = "Total: $0";
-
-          // Show a message to confirm the purchase
-          alert("Thank you for your purchase!");
-
-          // Redirect to the invoice page
-
-          window.location.href = "successful-payment.html";
-
-          // Store the total amount and items in local storage to access from the invoice page
-          localStorage.setItem("total", total);
-          localStorage.setItem("items", JSON.stringify(cart));
-
-          // Get the cart items from local storage and update the cart
-          let savedCart = localStorage.getItem("cart");
-          if (savedCart) {
-            cart = JSON.parse(savedCart);
-          }
-
-          updateCart();
-
-          // Store the updated cart in local storage
-          window.addEventListener("beforeunload", function () {
-            localStorage.setItem("cart", JSON.stringify(cart));
-          });
-        }
+      let total = 0;
+      for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].quantity;
       }
-    </script>
+
+      if (confirm(`Your total is $${total}. Do you want to proceed with the checkout?`)) {
+        // Clear the cart and update the shopping cart table
+        cart = [];
+        localStorage.removeItem("cart");
+        let table = document.getElementById("cart");
+        while (table.rows.length > 1) {
+          table.deleteRow(-1);
+        }
+        document.getElementById("total").innerHTML = "Total: $0";
 
 
-  </div>
+        // Show a message to confirm the purchase
+        alert("Thank you for your purchase!");
+
+        // Redirect to the invoice page
+
+        window.location.href = "successful-payment.html";
+
+        // Store the total amount and items in local storage to access from the invoice page
+        localStorage.setItem("total", total);
+        localStorage.setItem("items", JSON.stringify(cart));
+
+        // Get the cart items from local storage and update the cart
+        let savedCart = localStorage.getItem("cart");
+        if (savedCart) {
+          cart = JSON.parse(savedCart);
+        }
+
+        updateCart();
+
+        // Store the updated cart in local storage
+        window.addEventListener("beforeunload", function () {
+          localStorage.setItem("cart", JSON.stringify(cart));
+        });
+      }
+    }
+  </script>
+
   <script src="navbar-testing.js"></script>
 
 </body>
-<audio id="music">
-  <source src="assets/audio.mp3" type="audio/mp3">
-</audio>
-
-<input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br><br>
-<button id="playButton"
-  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Play
-  Music</button> <br><br>
-<button id="pauseButton"
-  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Pause
-  Music</button>
-
-<script>
-  var audio = document.getElementById("music");
-  var volumeSlider = document.getElementById("volumeSlider");
-  var playButton = document.getElementById("playButton");
-  var pauseButton = document.getElementById("pauseButton");
-
-  // Check if there's a saved audio state in local storage
-  var savedAudioState = localStorage.getItem("audioState");
-  var savedCurrentTime = localStorage.getItem("currentTime");
-  var savedVolume = localStorage.getItem("volume");
-
-  // If there's a saved audio state, apply it to the audio element
-  if (savedAudioState === "playing") {
-    audio.currentTime = savedCurrentTime;
-    audio.volume = savedVolume;
-    audio.play();
-  }
-
-  playButton.addEventListener("click", function () {
-    audio.play();
-    localStorage.setItem("audioState", "playing");
-  });
-
-  pauseButton.addEventListener("click", function () {
-    audio.pause();
-    localStorage.setItem("audioState", "paused");
-    localStorage.setItem("currentTime", audio.currentTime);
-  });
-
-  volumeSlider.addEventListener("input", function () {
-    audio.volume = volumeSlider.value;
-    localStorage.setItem("volume", audio.volume);
-  });
-</script>
-
-
-
-
 
 
 </html>
