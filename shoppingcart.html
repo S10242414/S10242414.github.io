@@ -225,5 +225,39 @@
   <script src="navbar-testing.js"></script>
 
 </body>
+<audio id="music">
+  <source src="assets/audio.mp3" type="audio/mp3">
+</audio>
+
+<button id="playButton">Play</button>
+<button id="pauseButton">Pause</button>
+
+<script>
+  var audio = document.getElementById("music");
+  var playButton = document.getElementById("playButton");
+  var pauseButton = document.getElementById("pauseButton");
+
+  // Check if there's a saved audio state in local storage
+  var savedAudioState = localStorage.getItem("audioState");
+  var savedCurrentTime = localStorage.getItem("currentTime");
+
+  // If there's a saved audio state, apply it to the audio element
+  if (savedAudioState === "playing") {
+    audio.currentTime = savedCurrentTime;
+    audio.play();
+  }
+
+  playButton.addEventListener("click", function () {
+    audio.play();
+    localStorage.setItem("audioState", "playing");
+  });
+
+  pauseButton.addEventListener("click", function () {
+    audio.pause();
+    localStorage.setItem("audioState", "paused");
+    localStorage.setItem("currentTime", audio.currentTime);
+  });
+</script>
+
 
 </html>
