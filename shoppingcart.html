@@ -39,7 +39,6 @@
         <li><a href="#">Contact</a></li>
         <li><a href="./loginsignup/login.html">Log in</a></li>
         <li><a href="shoppingcart.html">Cart</a></li>
-        <li><a href="#">Minigame </a></li>
       </ul>
     </div>
   </div>
@@ -229,21 +228,29 @@
   <source src="assets/audio.mp3" type="audio/mp3">
 </audio>
 
-<button id="playButton">Play</button>
-<button id="pauseButton">Pause</button>
+<input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br><br>
+<button id="playButton"
+  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Play
+  Music</button> <br><br>
+<button id="pauseButton"
+  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Pause
+  Music</button>
 
 <script>
   var audio = document.getElementById("music");
+  var volumeSlider = document.getElementById("volumeSlider");
   var playButton = document.getElementById("playButton");
   var pauseButton = document.getElementById("pauseButton");
 
   // Check if there's a saved audio state in local storage
   var savedAudioState = localStorage.getItem("audioState");
   var savedCurrentTime = localStorage.getItem("currentTime");
+  var savedVolume = localStorage.getItem("volume");
 
   // If there's a saved audio state, apply it to the audio element
   if (savedAudioState === "playing") {
     audio.currentTime = savedCurrentTime;
+    audio.volume = savedVolume;
     audio.play();
   }
 
@@ -257,7 +264,16 @@
     localStorage.setItem("audioState", "paused");
     localStorage.setItem("currentTime", audio.currentTime);
   });
+
+  volumeSlider.addEventListener("input", function () {
+    audio.volume = volumeSlider.value;
+    localStorage.setItem("volume", audio.volume);
+  });
 </script>
+
+
+
+
 
 
 </html>

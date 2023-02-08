@@ -38,7 +38,6 @@
           <li><a href="#">Contact</a></li>
           <li><a href="./loginsignup/login.html">Log in</a></li>
           <li><a href="shoppingcart.html">Cart</a></li>
-          <li><a href="#">Minigame </a></li>
         </ul>
       </ul>
     </div>
@@ -91,9 +90,13 @@
   <source src="assets/audio.mp3" type="audio/mp3">
 </audio>
 
-<input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" />
-<button id="playButton">Play Music</button>
-<button id="pauseButton">Pause Music</button>
+<input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br><br>
+<button id="playButton"
+  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Play
+  Music</button> <br><br>
+<button id="pauseButton"
+  style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Pause
+  Music</button>
 
 <script>
   var audio = document.getElementById("music");
@@ -129,6 +132,10 @@
     localStorage.setItem("volume", audio.volume);
   });
 </script>
+
+
+
+
 
 
 </html>
