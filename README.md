@@ -10,11 +10,10 @@
 
 - [x] Animation Page either using CSS or Lottie that redirects to Main Page
 - [x] Second Page: Main Page
-- [ ] Third Page: Menu
-- [ ] Fourth Page: Available Locations using API
-- [ ] Fifth Page: Log in Page using RestDB
-- [ ] Sixth Page: Sign up Page using RestDB
-- [ ] Seventh Page: Shopping Cart using RestDB
+- [x] Third Page: Menu
+- [x] Fourth Page: Available Locations/Map
+- [ ] Fifth Page: Log in/Sign Up Page using RestDB
+- [x] Sixth Page: Shopping Cart
 - [x] Side Navigation Bars with different options
 
 ## Wireframe:
@@ -24,3 +23,6 @@
 ![image](https://user-images.githubusercontent.com/47713804/214832229-7a2dbfd2-3d98-47ff-bdc7-8de975451584.png)
 
 ### Credits:
+
+Navbar credits to: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow
+Picture credits to google or something
