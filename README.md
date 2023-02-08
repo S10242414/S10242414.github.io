@@ -24,5 +24,6 @@
 
 ### Credits:
 
-Navbar credits to: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow
-Picture credits to google or something
+Navbar credits to: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
+Picture credits to google or something <br>
+Base Game credits to: https://www.youtube.com/watch?v=cYuY_l3dj-k&ab_channel=CodeNow
