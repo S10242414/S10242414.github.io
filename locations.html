@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <style>
+        #map {
+            height: 370px;
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        .map-description {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map-description">
+        <h2>Our Store Locations in Singapore</h2>
+        <p>Find our stores on the map below:</p>
+    </div>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="map.js"></script>
+
+    <script>let open = document.querySelector(".open");
+        let close = document.querySelector(".close");
+        let container = document.querySelector(".container");
+
+        open.onclick = function () {
+            container.style.transform = "rotateZ(0deg)";
+            this.style.visibility = "hidden";
+            close.style.visibility = "visible";
+        }
+
+        close.onclick = function () {
+            container.style.transform = "rotateZ(60deg)";
+            this.style.visibility = "hidden";
+            open.style.visibility = "visible";
+        }</script>
+</body>
+
+</html>
