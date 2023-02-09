@@ -158,7 +158,19 @@ ul li a
     padding: 5px;
   }
 
-
+  @media only screen and (max-width: 812px) {
+    .text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  
+    .buttons, .sliders, .footer {
+      display: block;
+      clear: both;
+      width: 100%;
+    }
+  }
+  
     /* Add CSS styles for the shopping cart */
     table {
         border-collapse: collapse;
