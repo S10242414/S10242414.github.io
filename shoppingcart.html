@@ -16,7 +16,48 @@
   <title>ASG2 Interactive Dev</title>
 
 </head>
+<style>
+  table {
+    width: 200%;
+    border-collapse: collapse;
+  }
 
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    th,
+    td {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    thead tr {
+      display: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: white;
+    }
+
+    tbody td:before {
+      content: attr(data-label);
+      display: inline-block;
+      font-weight: bold;
+      width: 40%;
+    }
+  }
+</style>
 
 <body>
   <div class="logo">
