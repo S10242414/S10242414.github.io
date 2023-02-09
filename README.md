@@ -16,7 +16,7 @@
 - [x] Sixth Page: Shopping Cart
 - [x] Side Navigation Bars with different options
 
-## Wireframe:
+## Sketch Wireframe:
 
 ![image](https://user-images.githubusercontent.com/47713804/214832154-d84f2feb-360b-4e21-9d37-efff36b12cc0.png) <br>
 ![image](https://user-images.githubusercontent.com/47713804/214832202-5bd8974c-af65-4f42-bfef-277dfd19c3c6.png) <br>
