@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
+
 *,html{font-family: Arial, Helvetica, sans-serif;}
 .bg-white{background: white;}
 .animation-center{  display: flex;
@@ -26,7 +28,6 @@ header {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
 body {
 	margin: 0;
 	background: #222;
