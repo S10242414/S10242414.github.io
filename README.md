@@ -2,7 +2,7 @@
 
 > The Healthy Fast Food Project! 🌯🥗
 
-### This is Javier's and Keene's Assignemnt Two for Interactive Development.
+### This is Javier's and Keene's Assignment Two for Interactive Development.
 
 #### We are creating a website of a fast food company with gamified features and it will be on a Fast Food company serving healthier food.
 
