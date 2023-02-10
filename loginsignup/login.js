@@ -1,12 +1,14 @@
 var username = [];
 var email = [];
 var password = [];
-function setFormMessage(formElement, type, message){
-	const messageElement = formElement.querySelector(".form__message");
 
-	messageElement.textContext = message
-	messageElement.classList.remove("form__message--success","form__message--error");
-    messageElement.classList.add('form__message--$(type)');
+function login(loginForm){
+    alert("username")
+    while(login()==true){
+        var loginUsername=document.getElementById("username").value;
+        document.write("Welcome"+"");
+        document.write("username");
+    }
 }
 
 $(document).ready(function () {
