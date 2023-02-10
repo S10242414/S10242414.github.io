@@ -47,6 +47,18 @@ With a simple yet concise lay-out to showcase our store so that it is easy and i
 ![image](https://user-images.githubusercontent.com/47713804/214832202-5bd8974c-af65-4f42-bfef-277dfd19c3c6.png) <br>
 ![image](https://user-images.githubusercontent.com/47713804/214832229-7a2dbfd2-3d98-47ff-bdc7-8de975451584.png)
 
+## Automatic Testing using W3C ( NOT MANUAL ):
+- CSS Validator
+![image](https://user-images.githubusercontent.com/47713804/218003373-ed0019ad-cf68-415b-814c-4f5de5bafcd9.png)
+- Links Validator
+![image](https://user-images.githubusercontent.com/47713804/218004039-4ba6670b-0c24-4a2f-9b79-8c456efac4a5.png)
+- HTML Validator 
+![image](https://user-images.githubusercontent.com/47713804/218004436-57800d82-4f14-48e5-b9b3-d81cfaae6fd7.png)
+- Alt Tag Checker
+![image](https://user-images.githubusercontent.com/47713804/218004544-9ac9785d-2bb3-4f7f-8b91-f6e9f32bef15.png)
+- Color Contrast Accessibility Validator
+![image](https://user-images.githubusercontent.com/47713804/218004606-39bf87f9-01ed-4d75-88f8-229747a6d5d4.png)
+
 ### Credits:
 
 Navbar credits to: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
