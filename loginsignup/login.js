@@ -1,24 +1,24 @@
-//[STEP 0]: Make sure our document is A-OK
+var contact = [];
+var tempArr = [];
 $(document).ready(function () {
-    //what kind of interface we want at the start 
     const APIKEY = "63d565e83bc6b255ed0c43c7";
     login();
     $("#update-contact-container").hide();
     $("#add-update-msg").hide();
   
-    //[STEP 1]: Create our submit form listener
+    //Create our submit form listener
     $("#login-submit").on("click", function (e) {
       //prevent default action of the button 
       e.preventDefault();
   
-      //[STEP 2]: let's retrieve form data
+      //retrieve form data
       //for now we assume all information is valid
       //you are to do your own data validation
       let loginUsername = $("#login-username").val();
       let loginEmail = $("#login-useremail").val();
       let loginPassword = $("#login-userpass").val();
   
-      //[STEP 3]: get form values when user clicks on send
+      //get user values when clicks on login
       //Adapted from restdb api
       let jsondata = {
         "username": loginUsername,
@@ -28,14 +28,12 @@ $(document).ready(function () {
       if(login() == true)
       {
           alert("Login successful");
-          console.log(check);
           window.location.href = "index.html"; 
       }
       else
       {
           alert("Login failed");
           console.log("Login Unsuccessful");
-          console.log(check);
           
       }
   }); 
@@ -60,11 +58,11 @@ function login()
         console.log(response);
         for (let i = 0; i < response.length; i++) 
         {
-            tempArr.push(response[i].username);
-            tempArr.push(response[i].email);
-            tempArr.push(response[i].password);
-            contact.push(tempArr);
-            tempArr = [];
+            temp.push(response[i].username);
+            temp.push(response[i].email);
+            temp.push(response[i].password);
+            contact.push(temp);
+            temp = [];
         }
         console.log(contact);
         // Check if user credentials are valid
