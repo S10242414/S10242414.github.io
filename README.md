@@ -62,6 +62,9 @@ With a simple yet concise lay-out to showcase our store so that it is easy and i
 ## Manual User Testing:
 ![image](https://user-images.githubusercontent.com/47713804/218006506-6a6af6c8-3379-4904-8bda-617fcf49d306.png)
 
+## Video Walkthrough ( Submitted on Brightspace also ):
+https://drive.google.com/file/d/1MdVlCYoOBBsBMRr-sjb_2KR0b61V74B0/view?usp=share_link
+
 ### Credits:
 Fonts: Google Fonts <br>
 Navbar credits: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
