@@ -59,6 +59,9 @@ With a simple yet concise lay-out to showcase our store so that it is easy and i
 - Color Contrast Accessibility Validator
 ![image](https://user-images.githubusercontent.com/47713804/218004606-39bf87f9-01ed-4d75-88f8-229747a6d5d4.png)
 
+## Manual User Testing:
+![image](https://user-images.githubusercontent.com/47713804/218006506-6a6af6c8-3379-4904-8bda-617fcf49d306.png)
+
 ### Credits:
 Fonts: Google Fonts <br>
 Navbar credits: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
