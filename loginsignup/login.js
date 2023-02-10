@@ -2,14 +2,6 @@ var username = [];
 var email = [];
 var password = [];
 
-function login(loginForm){
-    alert("username")
-    while(login()==true){
-        var loginUsername=document.getElementById("username").value;
-        document.write("Welcome"+"");
-        document.write("username");
-    }
-}
 
 $(document).ready(function () {
     const APIKEY = "63d565e83bc6b255ed0c43c7";

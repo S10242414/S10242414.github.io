@@ -55,7 +55,7 @@ function getdata(){
     {
         "async": true,
         "crossDomain": true,
-        "url": "https://members-5211.restdb.io/rest/member-data",
+        "url": "nuirimaa-56ee.restdb.io",
         "method": "GET",
         "headers": {
             "content-type": "application/json",
