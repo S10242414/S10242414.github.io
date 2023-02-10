@@ -60,7 +60,7 @@ With a simple yet concise lay-out to showcase our store so that it is easy and i
 ![image](https://user-images.githubusercontent.com/47713804/218004606-39bf87f9-01ed-4d75-88f8-229747a6d5d4.png)
 
 ### Credits:
-
-Navbar credits to: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
-Picture credits to google or something <br>
+Fonts: Google Fonts <br>
+Navbar credits: https://www.youtube.com/watch?v=iRdw8NezfkE&ab_channel=CodeNow <br>
+Picture credits: Google or something <br>
 Base Game credits to: https://www.youtube.com/watch?v=cYuY_l3dj-k&ab_channel=CodeNow
