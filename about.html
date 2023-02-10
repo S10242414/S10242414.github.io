@@ -66,9 +66,6 @@
         <br>
 
 
-        <style>
-
-        </style>
         <iframe id='locations' src="locations.html" style="width:90%; height: 500px; margin-top: 20px;"></iframe>
         <div class="music-buttons">
             <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br>
@@ -85,14 +82,13 @@
     </div>
 
     <script src="navbar-testing.js"></script>
-
+    <audio id="music">
+        <source src="assets/audio.mp3" type="audio/mp3">
+    </audio>
 
 </body>
 
-<audio id="music">
-    <source src="assets/audio.mp3" type="audio/mp3">
-</audio>
-<br>
+
 
 <script>
     var audio = document.getElementById("music");
