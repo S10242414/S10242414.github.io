@@ -1,5 +1,14 @@
-var contact = [];
-var tempArr = [];
+var username = [];
+var email = [];
+var password = [];
+function setFormMessage(formElement, type, message){
+	const messageElement = formElement.querySelector(".form__message");
+
+	messageElement.textContext = message
+	messageElement.classList.remove("form__message--success","form__message--error");
+    messageElement.classList.add('form__message--$(type)');
+}
+
 $(document).ready(function () {
     const APIKEY = "63d565e83bc6b255ed0c43c7";
     login();
@@ -10,19 +19,18 @@ $(document).ready(function () {
     $("#login-submit").on("click", function (e) {
       //prevent default action of the button 
       e.preventDefault();
-  
       //retrieve form data
       //for now we assume all information is valid
       //you are to do your own data validation
-      let loginUsername = $("#login-username").val();
-      let loginEmail = $("#login-useremail").val();
-      let loginPassword = $("#login-userpass").val();
+      let loginUsername = $("#username").val(); 
+      let loginEmail = $("#email").val();
+      let loginPassword = $("#pass").val();
   
       //get user values when clicks on login
       //Adapted from restdb api
       let jsondata = {
         "username": loginUsername,
-        "email": loginEmail,
+        "email":loginEmail,
         "password": loginPassword
       };
       if(login() == true)
@@ -32,49 +40,55 @@ $(document).ready(function () {
       }
       else
       {
-          alert("Login failed");
-          console.log("Login Unsuccessful");
-          
+          alert("Login Unsuccessful");
       }
+      let settings = 
+      {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://nuirimaa-56ee.restdb.io/rest/users",
+          "method": "GET",
+          "headers": {
+          "content-type": "application/json",
+          "x-apikey": APIKEY,
+          "cache-control": "no-cache"
+          },
+          "processData": false,
+          "data": JSON.stringify(jsondata),
+          "beforeSend": function()
+          {
+              $("login").trigger("reset");
+          }
+      }
+      $.ajax(settings).done(function (response) 
+      {
+          console.log(response);
+          $("#login-submit").prop( "disabled", false);
+      });        
   }); 
 });
 
 function login() 
 {
-    let settings = 
-    {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://nuirimaa-56ee.restdb.io/rest/users",
-        "method": "GET",
-        "headers": {
-            "content-type": "application/json",
-            "x-apikey": APIKEY,
-            "cache-control": "no-cache"
-        }
-    }
     $.ajax(settings).done(function (response) 
     {
         console.log(response);
         for (let i = 0; i < response.length; i++) 
         {
-            temp.push(response[i].username);
-            temp.push(response[i].email);
-            temp.push(response[i].password);
-            contact.push(temp);
-            temp = [];
-        }
-        console.log(contact);
-        // Check if user credentials are valid
-        for (let i = 0; i < contact.length; i++) {
-            if ((contact[i][0] == username || contact[i][1] == email) && contact[i][2] == password) {
-                console.log("Login successful");
+            username.push(response[i].username);
+            email.push(response[i].email);
+            pass.push(response[i].password);
+            // Check if user credentials are valid
+            if (contact[i].username == $("#username")||$("#email") && contact[i].password == $("#pass")) {
+                alert("Login successful");
+                contact = [];
                 return true;
-            } else {
-                console.log("Username/email or password is incorrect");
+            } 
+            else {
+                alert("Username/email or password is incorrect");
                 return false;
             }
-        } 
+        }
     });
 
-  }
+  } 
