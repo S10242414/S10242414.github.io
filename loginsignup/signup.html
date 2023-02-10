@@ -43,15 +43,15 @@
                 <div class="form__input-error-message"><!--Wrong username/email--></div>
             </div>
             <div class="form__input-group">
-                <input type="password" id="username" class="form__input " autofocus placeholder="Password" required>
+                <input type="password" id="password" class="form__input " autofocus placeholder="Password" required>
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" id="username" class="form__input " autofocus placeholder="Confirm Password"
+                <input type="password" id="confirm password" class="form__input " autofocus placeholder="Confirm Password"
                     required>
                 <div class="form__input-error-message"></div>
             </div>
-            <button class="form__button" type="login">Log in</button>
+            <button class="form__button" id="signupbtn" type="signup">Sign up</button>
 
             <p class="form__text">
                 <a class="form__link" href=login.html d="linkLogin">Already have an account? Log in</a>
@@ -59,37 +59,8 @@
         </form>
     </div>
     <script src="../navbar-testing.js"></script>
+    <script src="signup.js"></script>
 </body>
 
 </html>
 
-
-<div class="container">
-    <h1>Simple Contact Form System</h1>
-    <div id="add-update-msg">
-        <div class="alert alert-success" role="alert">
-            Contact record successfully added
-        </div>
-    </div>
-    <div class="form" id="add-contact">
-        <form id="add-contact-form">
-            <div class="form-group">
-                <label for="contact-name">Name</label>
-                <input type="text" id="contact-name" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="contact-email">Email</label>
-                <input type="email" id="contact-email" class="form-control" required>
-                <small id="contact-email-help" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
-            </div>
-            <div class="form-group">
-                <label for="contact-msg">Message</label>
-                <textarea id="contact-msg" class="form-control" required>
-        </textarea>
-            </div>
-
-            <input type="submit" value="Send" class="btn btn-primary" id="contact-submit">
-        </form>
-    </div>
-</div>
