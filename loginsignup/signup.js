@@ -21,14 +21,14 @@ $(document).ready(function() {
             password: password
           }),
           success: function(data) {
-            console.log("Successfully signed up!");
+            alert("Successfully signed up!");
           },
           error: function(error) {
-            console.log("Error signing up: " + error);
+            alert("Error signing up: " + error);
           }
         });
       } else {
-        console.log("Password and confirm password do not match");
+        alert("Password and confirm password do not match");
       }
     });
   });
