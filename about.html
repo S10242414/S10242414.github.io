@@ -2,21 +2,30 @@
 <!DOCTYPE html>
 
 
-<html>
+<html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="CMA Tutorials">
 <link rel="stylesheet" href="navbar-testing.css">
+
 
 <head>
     <title>ASG2 Interactive Dev</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khojki&display=swap" rel="stylesheet">
+    <style>
+        input[type="range"],
+        button {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+        }
+    </style>
 </head>
 
 
 <body>
-    <div class="logo"> <img src="logo1.png" alt="Logo" class="logo" width=200px>
+    <div class="logo"> <img src="logo1.png" alt="Logo" class="logo" width=200>
     </div>
 
     <div class="container">
@@ -41,36 +50,31 @@
     <div class="content">
         <button
             style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">
-            <a href="main.html" style="text-decoration: none; color: white;">About Nutrima.</a>
+            <a style="text-decoration: none; color: white;">About Nutrima.</a>
         </button>
         <p>We are a healthy fast food company that is dedicated to providing delicious and nutritious meals to our
-            customers. <br></br>
+            customers. <br><br>
             Our menu is made up of fresh, whole ingredients and is free from artificial preservatives, colors, and
             flavors.
             We offer a wide variety of options including salads, wraps, bowls, and smoothies that cater to different
             dietary restrictions such as vegan, gluten-free and low-carb.
-            <br></br>
+            <br><br>
         </p>
-        <button
-            style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">
-            <a href="main.html" style="text-decoration: none; color: white;">Go to Menu</a>
-        </button>
-
+        <button onclick="window.location.href='main.html'"
+            style="margin-top: 20px; background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4CAF50; transition: all 0.3s ease-in-out;">Go
+            to Menu</button>
         <br>
 
 
         <style>
-            button:hover {
-                transform: translateY(-5px);
-                box-shadow: 0px 0px 20px #ddd;
-            }
+
         </style>
         <iframe id='locations' src="locations.html" style="width:90%; height: 500px; margin-top: 20px;"></iframe>
         <div class="music-buttons">
-            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br><br>
+            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" /><br>
             <button id="playButton"
                 style="background-color: #4c74af; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4c74af; transition: all 0.3s ease-in-out;">Play
-                Music</button> <br><br>
+                Music</button> <br>
             <button id="pauseButton"
                 style="background-color: #4c74af; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 0; box-shadow: 0px 0px 10px #4c74af; transition: all 0.3s ease-in-out;">Pause
                 Music</button>
@@ -84,14 +88,7 @@
 
 
 </body>
-<style>
-    input[type="range"],
-    button {
-        display: block;
-        margin: 20px auto;
-        width: 200px;
-    }
-</style>
+
 <audio id="music">
     <source src="assets/audio.mp3" type="audio/mp3">
 </audio>

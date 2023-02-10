@@ -1,4 +1,4 @@
-var stores = [  {    name: "Store 1",    lat: 1.3521,    lng: 103.8198  },  {    name: "Store 2",    lat: 1.2904,    lng: 103.8520  }];
+var stores = [  {    name: "MacRitchie Nature Trail: Store 1",    lat: 1.3521,    lng: 103.8198  },  {    name: "Saint Andrew's Road: Store 2",    lat: 1.2904,    lng: 103.8520  }];
 
 var map = L.map("map").setView([1.3521, 103.8198], 13);
 

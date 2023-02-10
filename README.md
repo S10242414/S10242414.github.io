@@ -4,7 +4,7 @@
 
 ### This is Javier's and Keene's Assignemnt Two for Interactive Development.
 
-#### We are creating a website of a fast food company with gamified features and it will be on a Fast Food company serving healthier food.
+#### This is a website of a fast food company but with a twist of Healthy Food.
 
 ## Design Process:
 
@@ -15,6 +15,31 @@
 - [ ] Fifth Page: Log in/Sign Up Page using RestDB
 - [x] Sixth Page: Shopping Cart
 - [x] Side Navigation Bars with different options
+
+## The Website:
+
+With a simple yet concise lay-out to showcase our store so that it is easy and intuitive for users to find and access the services that they are looking for with buttons and the Navbar. Green, white & grey were used as the colours are often associated with grocery stores.
+
+## User Story:
+
+> As a user of the website, I want to be able to navigate my way easily and find the food item I would want to purchase without any hassles.
+
+## Technology Used:
+
+- HTML
+
+  > The project uses HTML for the HTML document of the website.
+
+- CSS
+
+  > The project uses CSS for styling of the website.
+
+- JavaScript & JQuery
+
+  > The project uses both JavaScript and JQuery to add functionality to the website.
+
+- RestDB
+  > The project uses restdb.io to store details regarding aspects such as user accounts.
 
 ## Sketch Wireframe:
 
