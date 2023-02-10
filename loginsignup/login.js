@@ -1,13 +1,7 @@
 var username = [];
 var email = [];
 var password = [];
-function setFormMessage(formElement, type, message){
-	const messageElement = formElement.querySelector(".form__message");
 
-	messageElement.textContext = message
-	messageElement.classList.remove("form__message--success","form__message--error");
-    messageElement.classList.add('form__message--$(type)');
-}
 
 $(document).ready(function () {
     const APIKEY = "63d565e83bc6b255ed0c43c7";
